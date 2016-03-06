@@ -1,0 +1,16 @@
+pleaes use the following command to execute it:
+
+hadoop jar SN_fragment_seed.jar SNOMEDCTDriver input_arg0_directory input_arg1_directory output_directory
+
+where
+
+input_arg0 is the file whose row is a pair of seeds (delimited by [TAB]);
+
+input_arg1_directory contains three files:
+(1)upclosure.txt (got by convertting the output of SN.jar using the included python code. Its format like a#b,c,d,... where b,c,d,.. are a's (direct or indirect) parents)
+(2)downclosure.txt (the same with upclosure except that we need to reverse parent-child relationship before computing the closure. Note, rather than "#", we use '@' as delimiter for downclosure.)
+(3)original_edge.txt (each row is an edge in original graph like a|b, i.e. delimited by | ) 
+
+output whose row like:
+seed1[TAB]seed2[TAB]all nodes inside the fragment(delimited by ,)[TAB]all edges inside the fragment(delimited by ",", edge is represented by a|b)
+

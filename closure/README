@@ -1,0 +1,19 @@
+please run the following command to execute it:
+
+hadoop jar SN.jar SNOMEDCTDriver input_arg0_directory input_arg1_directory output_directory
+
+where arg0 is file which contains all node ids (each per row) in the graph;
+
+arg1 is the file whose row is like:
+a[TAB]b,c,d...
+where b,c,d... is only the direct parents of a;
+
+output is the file whose row is like:
+a[TAB]b
+where b is among the upper closure of a, i.e. b is one of a's (direct or indirect) parents;
+
+After getting the results, please use the included clos2frag.py to convert the output file into the format that can be used for fragment computation.
+
+
+
+
